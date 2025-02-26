@@ -2,7 +2,14 @@ let totalGeral = 0;
 limpar();
 
 function adicionar() {
-let produto = document.getElementById('produto').value;
+
+  let produto = document.getElementById('produto').value;
+
+    if ( produto || produto.includes('-') || produto.includes('R$')) {
+        alert("Por favor, selecione um produto válido.");
+        return;
+      }
+      
 let nomeProduto = produto.split ('-')[0];
 let valorUnitario = produto.split ('R$')[1];
 let quantidade = document.getElementById('quantidade').value;
